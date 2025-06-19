@@ -1,0 +1,48 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Monti Singh | Portfolio</title>
+  <link rel="stylesheet" href="/static/style.css">
+  <script src="/static/script.js" defer></script>
+</head>
+<body>
+  <header class="fade-in">
+    <h1>Monti Singh</h1>
+    <p>Web Developer | Python Enthusiast</p>
+  </header>
+
+  <section class="fade-in">
+    <h2>Projects</h2>
+    <ul>
+      <li>🎮 Gaming Website</li>
+      <li>🐦 Flappy Bird Clone</li>
+      <li>🏠 AI Home Designer</li>
+    </ul>
+  </section>
+
+  <section class="fade-in">
+    <h2>Contact Me</h2>
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <ul class="flashes">
+        {% for message in messages %}
+          <li>{{ message }}</li>
+        {% endfor %}
+        </ul>
+      {% endif %}
+    {% endwith %}
+    <form action="/contact" method="post">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <textarea name="message" placeholder="Your Message" required></textarea>
+      <button type="submit">Send</button>
+    </form>
+  </section>
+
+  <footer class="fade-in">
+    <p>Contact: youremail@example.com</p>
+  </footer>
+</body>
+</html>
